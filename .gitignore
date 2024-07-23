@@ -1,0 +1,12 @@
+*.swp
+*.swo
+*.out
+*.exe
+*.gch
+*.o
+*.a
+*.txt
+*.pdf
+.vscode
+checker_linux
+push_swap
