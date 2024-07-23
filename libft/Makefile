@@ -14,8 +14,8 @@ CFLAGS = -Wall -Wextra -Werror
 
 OBJ_DIR = objs
 
-SRCS = $(filter-out *bonus.c, $(wildcard *.c))
 BONUS_SRCS = $(wildcard *bonus.c)
+SRCS = $(filter-out $(BONUS_SRCS), $(wildcard *.c))
 
 OBJS = $(patsubst %.c,$(OBJ_DIR)/%.o,$(SRCS))
 BONUS_OBJS = $(patsubst %bonus.c,$(OBJ_DIR)/%bonus.o,$(BONUS_SRCS))
