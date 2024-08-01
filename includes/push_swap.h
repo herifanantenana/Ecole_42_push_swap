@@ -2,9 +2,12 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
+/*                                                    +:+ +:+
+	+:+     */
+/*   By: arakotom <arakotom@student.42antananari    +#+  +:+
+	+#+        */
+/*                                                +#+#+#+#+#+
+	+#+           */
 /*   Created: 2024/07/14 15:28:35 by  arakotom         #+#    #+#             */
 /*   Updated: 2024/07/23 21:44:19 by arakotom         ###   ########.fr       */
 /*                                                                            */
@@ -46,6 +49,7 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 
+char				*ps_join_arg(char **argv);
 void				pa(t_stack **stack_b, t_stack **stack_a);
 void				pb(t_stack **stack_a, t_stack **stack_b);
 void				sa(t_stack **stack_a);
@@ -71,9 +75,9 @@ void				print_stack(t_stack **stack, char name, int free_stack);
 int					syntax_error(char *nbr);
 int					range_error(long nbr);
 int					duplicate_error(t_stack **stack, int nbr);
-void				error_exit(t_stack **stack, char **str, int free_str);
+void				error_exit(t_stack **stack, char **str);
 void				init_sort(t_stack **a, t_stack **b);
-void				init_a(t_stack **stack, char **argv, int free_argv);
+void				init_a(t_stack **stack, char **argv);
 void				init_stack_a(t_stack **a, t_stack **b);
 void				init_stack_b(t_stack **a, t_stack **b);
 void				move_to_top(t_stack **stack, char name, t_stack *top_node);

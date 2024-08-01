@@ -2,9 +2,12 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_error_handler.c                                 :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
+/*                                                    +:+ +:+
+	+:+     */
+/*   By: arakotom <arakotom@student.42antananari    +#+  +:+
+	+#+        */
+/*                                                +#+#+#+#+#+
+	+#+           */
 /*   Created: 2024/07/14 17:03:05 by arakotom          #+#    #+#             */
 /*   Updated: 2024/07/23 20:57:05 by arakotom         ###   ########.fr       */
 /*                                                                            */
@@ -25,6 +28,8 @@ int	syntax_error(char *nbr)
 		i++;
 	if (ft_issign(nbr[i]))
 		i++;
+	if (!ft_isdigit(nbr[i]))
+		return (TRUE);
 	while (ft_isdigit(nbr[i]))
 		i++;
 	if (i != len)
@@ -61,11 +66,12 @@ int	duplicate_error(t_stack **stack, int nbr)
 	return (FALSE);
 }
 
-void	error_exit(t_stack **stack, char **str, int free_str)
+void	error_exit(t_stack **stack, char **str)
 {
-	ft_printf("\033[0;31mError\033[0m\n");
-	ft_free_stack(stack);
-	if (free_str)
+	ft_putstr_fd("Error\n", 2);
+	if (stack)
+		ft_free_stack(stack);
+	if (str)
 		ft_free_tab_str(str);
 	exit(EXIT_FAILURE);
 }

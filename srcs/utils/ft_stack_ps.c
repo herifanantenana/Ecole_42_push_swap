@@ -2,9 +2,12 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_stack_ps.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
+/*                                                    +:+ +:+
+	+:+     */
+/*   By: arakotom <arakotom@student.42antananari    +#+  +:+
+	+#+        */
+/*                                                +#+#+#+#+#+
+	+#+           */
 /*   Created: 2024/07/15 00:54:39 by arakotom          #+#    #+#             */
 /*   Updated: 2024/07/23 20:23:26 by arakotom         ###   ########.fr       */
 /*                                                                            */
@@ -48,7 +51,7 @@ void	add_stack(t_stack **stack, int nbr)
 
 	new = new_node(nbr);
 	if (!new)
-		error_exit(stack, NULL, FALSE);
+		error_exit(stack, NULL);
 	if (!*stack)
 	{
 		*stack = new;
