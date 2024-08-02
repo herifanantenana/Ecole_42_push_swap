@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push.c                                          :+:      :+:    :+:   */
+/*   ps_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 17:50:58 by arakotom          #+#    #+#             */
-/*   Updated: 2024/07/23 20:29:38 by arakotom         ###   ########.fr       */
+/*   Updated: 2024/08/03 00:45:16 by arakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-static int	ft_push(t_stack **src, t_stack **dst)
+static int	ps_push(t_stack **src, t_stack **dst)
 {
 	t_stack	*head;
 
@@ -31,12 +31,12 @@ static int	ft_push(t_stack **src, t_stack **dst)
 
 void	pa(t_stack **stack_b, t_stack **stack_a)
 {
-	if (ft_push(stack_b, stack_a))
+	if (ps_push(stack_b, stack_a))
 		write(1, "pa\n", 3);
 }
 
 void	pb(t_stack **stack_a, t_stack **stack_b)
 {
-	if (ft_push(stack_a, stack_b))
+	if (ps_push(stack_a, stack_b))
 		write(1, "pb\n", 3);
 }

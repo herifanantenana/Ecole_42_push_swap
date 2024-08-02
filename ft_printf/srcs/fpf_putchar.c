@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   fpf_putchar.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/29 17:20:47 by arakotom          #+#    #+#             */
-/*   Updated: 2024/07/26 11:17:23 by arakotom         ###   ########.fr       */
+/*   Created: 2024/03/10 14:56:05 by arakotom          #+#    #+#             */
+/*   Updated: 2024/08/03 00:07:29 by arakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/ft_printf.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_putchar_pf(int *count, const char c)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == (char)c)
-			return ((char *)s + i);
-		i++;
-	}
-	if (s[i] == (char)c)
-		return ((char *)s + i);
-	return (NULL);
+	write(1, &c, 1);
+	(*count) += 1;
 }

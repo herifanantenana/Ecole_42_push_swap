@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_ps.c                                       :+:      :+:    :+:   */
+/*   fpf_strlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/14 16:12:35 by arakotom          #+#    #+#             */
-/*   Updated: 2024/07/23 20:08:36 by arakotom         ###   ########.fr       */
+/*   Created: 2024/03/10 16:23:48 by arakotom          #+#    #+#             */
+/*   Updated: 2024/08/03 00:07:34 by arakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "../../includes/ft_printf.h"
 
-void	ft_free_stack(t_stack **stack)
+size_t	ft_strlen(const char *s)
 {
-	t_stack	*tmp;
+	size_t	count;
 
-	while (*stack)
-	{
-		tmp = *stack;
-		tmp->val = 0;
-		*stack = (*stack)->next;
-		free(tmp);
-	}
+	count = 0;
+	while (s[count] != '\0')
+		count++;
+	return (count);
 }

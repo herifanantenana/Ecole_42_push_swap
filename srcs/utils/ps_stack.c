@@ -1,15 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_ps.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+
-	+:+     */
-/*   By: arakotom <arakotom@student.42antananari    +#+  +:+
-	+#+        */
-/*                                                +#+#+#+#+#+
-	+#+           */
+/*   ps_stack.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 00:54:39 by arakotom          #+#    #+#             */
-/*   Updated: 2024/07/23 20:23:26 by arakotom         ###   ########.fr       */
+/*   Updated: 2024/08/03 00:44:55 by arakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,5 +98,5 @@ void	print_stack(t_stack **stack, char name, int free_stack)
 		tmp = tmp->next;
 	}
 	if (free_stack)
-		ft_free_stack(stack);
+		ps_free_stack(stack);
 }

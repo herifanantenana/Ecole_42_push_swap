@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   fpf_putnbr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/10 15:10:41 by arakotom          #+#    #+#             */
-/*   Updated: 2024/07/23 01:27:32 by arakotom         ###   ########.fr       */
+/*   Created: 2024/03/11 09:38:45 by arakotom          #+#    #+#             */
+/*   Updated: 2024/08/03 00:07:10 by arakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_printf.h"
+#include "../includes/ft_printf.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_putnbr_pf(int *count, int n)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (s[i])
+	if (n == -2147483648)
 	{
-		if (s[i] == (char)c)
-			return ((char *)s + i);
-		i++;
+		ft_putstr_pf(count, "-2147483648");
+		return ;
 	}
-	if (s[i] == (char)c)
-		return ((char *)s + i);
-	return (NULL);
+	else if (n < 0)
+		ft_putchar_pf(count, '-');
+	ft_putnbr_base_pf(count, n, BASE_DEC);
 }

@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_pf.c                                    :+:      :+:    :+:   */
+/*   fpf_putnbr_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/10 14:56:05 by arakotom          #+#    #+#             */
-/*   Updated: 2024/07/23 02:00:53 by arakotom         ###   ########.fr       */
+/*   Created: 2024/03/10 16:23:48 by arakotom          #+#    #+#             */
+/*   Updated: 2024/08/03 00:07:24 by arakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-void	ft_putchar_pf(int *count, const char c)
+void	ft_putnbr_base_pf(int *count, size_t n, const char *base)
 {
-	write(1, &c, 1);
-	(*count) += 1;
+	unsigned int	base_len;
+
+	base_len = ft_strlen(base);
+	if (base_len == 0)
+		return ;
+	if (n > (base_len - 1))
+		ft_putnbr_base_pf(count, n / base_len, base);
+	ft_putchar_pf(count, base[n % base_len]);
 }

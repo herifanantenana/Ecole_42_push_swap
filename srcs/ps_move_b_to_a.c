@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base_pf.c                                :+:      :+:    :+:   */
+/*   ps_move_b_to_a.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/10 16:23:48 by arakotom          #+#    #+#             */
-/*   Updated: 2024/07/23 01:05:50 by arakotom         ###   ########.fr       */
+/*   Created: 2024/07/18 01:14:58 by arakotom          #+#    #+#             */
+/*   Updated: 2024/08/03 00:42:54 by arakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "../includes/push_swap.h"
 
-void	ft_putnbr_base_pf(int *count, size_t n, const char *base)
+void	move_min_to_top(t_stack **stack, char name)
 {
-	unsigned int	base_len;
+	t_stack	*min;
 
-	base_len = ft_strlen(base);
-	if (base_len == 0)
-		return ;
-	if (n > (base_len - 1))
-		ft_putnbr_base_pf(count, n / base_len, base);
-	ft_putchar_pf(count, base[n % base_len]);
+	min = min_node(*stack);
+	move_to_top(stack, name, min);
+}
+
+void	move_b_to_a(t_stack **a, t_stack **b)
+{
+	t_stack	*node_to_move;
+
+	node_to_move = (*b)->target;
+	move_to_top(a, 'a', node_to_move);
+	pa(b, a);
 }

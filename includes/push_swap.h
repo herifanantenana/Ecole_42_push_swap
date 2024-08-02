@@ -61,7 +61,7 @@ void				rr(t_stack **stack_a, t_stack **stack_b);
 void				rra(t_stack **stack_a);
 void				rrb(t_stack **stack_b);
 void				rrr(t_stack **stack_a, t_stack **stack_b);
-void				ft_free_stack(t_stack **stack);
+void				ps_free_stack(t_stack **stack);
 t_stack				*new_node(int nbr);
 t_stack				*last_node(t_stack **stack);
 t_stack				*max_node(t_stack *stack);

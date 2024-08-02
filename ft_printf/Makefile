@@ -6,7 +6,7 @@
 #    By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/10 17:55:45 by arakotom          #+#    #+#              #
-#    Updated: 2024/07/23 01:56:01 by arakotom         ###   ########.fr        #
+#    Updated: 2024/08/03 00:14:33 by arakotom         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,16 @@ CFLAGS = -Wall -Wextra -Werror
 SRC_DIR = srcs
 OBJ_DIR = objs
 
-SRCS = $(wildcard $(SRC_DIR)/*.c) $(wildcard $(SRC_DIR)/*/*.c)
-OBJS = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRCS))
+SRCS = fpf_putaddress.c \
+	fpf_putnbr.c \
+	fpf_putchar.c \
+	fpf_putstr.c \
+	fpf_putnbr_base.c \
+	ft_printf.c \
+	utils/fpf_strchr.c \
+	utils/fpf_strlen.c
+
+OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
 
 RM = rm -rf
 

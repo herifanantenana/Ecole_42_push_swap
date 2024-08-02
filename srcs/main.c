@@ -35,6 +35,6 @@ int	main(int argc, char const *argv[])
 		error_exit(NULL, list_splitted);
 	init_a(&stack_a, list_splitted);
 	init_sort(&stack_a, &stack_b);
-	ft_free_stack(&stack_a);
+	ps_free_stack(&stack_a);
 	return (0);
 }
