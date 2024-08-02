@@ -6,7 +6,7 @@
 /*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 14:46:30 by arakotom          #+#    #+#             */
-/*   Updated: 2024/08/03 00:43:18 by arakotom         ###   ########.fr       */
+/*   Updated: 2024/08/03 01:00:45 by arakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char	*ps_join_arg(char **argv)
 		result = ps_strjoin(result, argv[i]);
 		if (!argv[i] || !argv[i][0])
 		{
-			ft_putstr_fd("Error", 2);
+			ft_putstr_fd("Error\n", 2);
 			free(result);
 			exit(1);
 		}

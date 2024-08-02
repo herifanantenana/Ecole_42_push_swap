@@ -6,7 +6,7 @@
 /*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 17:03:05 by arakotom          #+#    #+#             */
-/*   Updated: 2024/08/03 00:53:05 by arakotom         ###   ########.fr       */
+/*   Updated: 2024/08/03 00:57:45 by arakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	error_exit(t_stack **stack, char **str)
 {
 	ft_putstr_fd("Error\n", 2);
 	if (stack)
-		ft_free_stack(stack);
+		ps_free_stack(stack);
 	if (str)
 		ft_free_tab_str(str);
 	exit(EXIT_FAILURE);
